@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "964393822477",
+    "project_id": "colorchat-6a795",
+    "storage_bucket": "colorchat-6a795.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964393822477:android:5ce01ff845c3ebe3d26844",
+        "android_client_info": {
+          "package_name": "com.k3.discordremake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964393822477-eqer25713d92snvneunf1llm2ssr10u9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzXzU6xxaajlTEf5NJDdLeV9D4pS9kwcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964393822477-eqer25713d92snvneunf1llm2ssr10u9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

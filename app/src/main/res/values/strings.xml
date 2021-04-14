@@ -22,4 +22,8 @@
     <string name="channel_description_here">Channel description here</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
+    <string name="recover_email_sent">Recover email sent</string>
+    <string name="email_not_valid">Email is not valid</string>
+    <string name="password_not_valid_for_registration">Password is too short or doesn`t match</string>
+    <string name="user_name_not_valid">User name is not valid</string>
 </resources>

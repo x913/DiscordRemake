@@ -1,78 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.signup.SignUpActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailSignUpTextInputLayout"
-        android:layout_height="wrap_content"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_marginTop="32dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        style="@style/Widget.ColorChat.EditText"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".ui.signup.SignUpActivity">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="text"
-            android:hint="@string/email"
-            android:id="@+id/emailTextInput"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailSignUpTextInputLayout"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_marginTop="32dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            style="@style/Widget.ColorChat.EditText"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="text"
+                android:hint="@string/email"
+                android:id="@+id/emailTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/firstPasswordSignUpTextInputLayout"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        style="@style/Widget.ColorChat.EditText"
-        app:layout_constraintTop_toBottomOf="@id/emailSignUpTextInputLayout">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textPassword"
-            android:hint="@string/password"
-            android:id="@+id/firstPasswordText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstPasswordSignUpTextInputLayout"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            style="@style/Widget.ColorChat.EditText"
+            app:layout_constraintTop_toBottomOf="@id/emailSignUpTextInputLayout">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:id="@+id/firstPasswordText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/secondPasswordSignUpTextInputLayout"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        style="@style/Widget.ColorChat.EditText"
-        app:layout_constraintTop_toBottomOf="@id/firstPasswordSignUpTextInputLayout">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textPassword"
-            android:hint="@string/repeat_password"
-            android:id="@+id/secondPasswordText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/secondPasswordSignUpTextInputLayout"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            style="@style/Widget.ColorChat.EditText"
+            app:layout_constraintTop_toBottomOf="@id/firstPasswordSignUpTextInputLayout">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textPassword"
+                android:hint="@string/repeat_password"
+                android:id="@+id/secondPasswordText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/signUpButton"
-        style="@style/Widget.ColorChar.Button"
-        android:text="Sign Up"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintTop_toBottomOf="@id/secondPasswordSignUpTextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userNameTextInputLayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            style="@style/Widget.ColorChat.EditText"
+            app:layout_constraintTop_toBottomOf="@+id/secondPasswordSignUpTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="text"
+                android:hint="User name"
+                android:id="@+id/userNameTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signUpButton"
+            style="@style/Widget.ColorChar.Button"
+            android:text="@string/sign_up"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintTop_toBottomOf="@id/userNameTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/signUpProgress"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/signUpButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="8dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
