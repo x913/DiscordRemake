@@ -6,18 +6,27 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    
+
     <style name="Widget.ColorChar.Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="strokeColor">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
-<!--    <style name="Widget.ColorChat.ButtonFilled" parent="Widget.MaterialComponents.Button">-->
-<!--        <item name="na"-->
-<!--    </style>-->
-<!--    -->
+    <!--    <style name="Widget.ColorChat.ButtonFilled" parent="Widget.MaterialComponents.Button">-->
+    <!--        <item name="na"-->
+    <!--    </style>-->
+    <!--    -->
     <style name="Widget.ColorChat.EditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
     </style>
-    
+
+    <style name="Theme.DiscordRemake.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DiscordRemake.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DiscordRemake.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

@@ -1,8 +1,25 @@
 <resources>
     <string name="app_name">DiscordRemake</string>
     <string name="email_address">Email Address</string>
-    <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign up</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="no_channels_yet">No channels yet</string>
+    <string name="hey">Hey!</string>
+    <string name="channel_name_here">Channel name here</string>
+    <string name="channel_description_here">Channel description here</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
 </resources>
