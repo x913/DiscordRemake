@@ -10,6 +10,10 @@ import com.k3.discordremake.R
 
 class ChannelDialogFragment : DialogFragment(), View.OnClickListener {
 
+//    internal interface ChannelListener {
+//        fun onChannel(channel: Channel)
+//    }
+
     lateinit var channelName: EditText
     lateinit var channelDescription: EditText
 

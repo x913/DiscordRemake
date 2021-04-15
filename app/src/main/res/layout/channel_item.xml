@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -36,10 +37,10 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/friendNameTextView"
+                    android:id="@+id/channelNameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lorem Ipsum"
+                    tools:text="@tools:sample/first_names"
                     android:textAlignment="textStart"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -49,7 +50,7 @@
                     android:id="@+id/descriptionTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lorem Ipsum dolor sit amet"
+                    tools:text="@tools:sample/lorem"
                     android:textSize="18sp" />
 
             </LinearLayout>
