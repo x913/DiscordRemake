@@ -12,10 +12,10 @@ import com.k3.discordremake.data.model.Message
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ChatAdapter(query: Query): FireStoreAdapter<ChatAdapter.MessageViewHolder>(query) {
+open class ChatAdapter(query: Query): FireStoreAdapter<ChatAdapter.MessageViewHolder>(query) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_chat, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.message_item, parent, false)
         return MessageViewHolder(view)
     }
 

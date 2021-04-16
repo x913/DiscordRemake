@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textview.MaterialTextView
 import com.google.firebase.firestore.Query
 import com.k3.discordremake.R
 import com.k3.discordremake.data.model.Channel
 import com.k3.discordremake.ui.chat.FireStoreAdapter
 import java.util.*
 
-class ChannelAdapter(query: Query, private val listener: OnChannelSelectedListener): FireStoreAdapter<ChannelAdapter.ChannelViewHolder>(query) {
+open class ChannelAdapter(query: Query, private val listener: OnChannelSelectedListener): FireStoreAdapter<ChannelAdapter.ChannelViewHolder>(query) {
 
     interface OnChannelSelectedListener {
         fun onChannelSelected(channel: Channel?)
@@ -35,8 +36,8 @@ class ChannelAdapter(query: Query, private val listener: OnChannelSelectedListen
         fun bind(channel: Channel?, listener: OnChannelSelectedListener) = with(view) {
             channel?.let {
 
-                findViewById<EditText>(R.id.channelNameTextView).setText(it.name)
-                findViewById<EditText>(R.id.descriptionTextView).setText(it.description)
+                findViewById<MaterialTextView>(R.id.channelNameTextView).text = it.name
+                findViewById<MaterialTextView>(R.id.descriptionTextView).text = it.description
 
 
                 val rnd = Random()
@@ -44,9 +45,11 @@ class ChannelAdapter(query: Query, private val listener: OnChannelSelectedListen
 
                 findViewById<ImageView>(R.id.channelIcon).setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN)
             }
+
             this.setOnClickListener {
                 listener.onChannelSelected(channel)
             }
+
         }
     }
 
