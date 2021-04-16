@@ -1,5 +1,6 @@
 package com.k3.discordremake.ui.channels
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,15 +8,18 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
 import com.k3.discordremake.R
+import com.k3.discordremake.data.model.Channel
 
 class ChannelDialogFragment : DialogFragment(), View.OnClickListener {
 
-//    internal interface ChannelListener {
-//        fun onChannel(channel: Channel)
-//    }
+    internal interface ChannelListener {
+        fun onChannel(channel: Channel)
+    }
 
     lateinit var channelName: EditText
     lateinit var channelDescription: EditText
+
+    private var channelListener: ChannelListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.dialog_channel, container, false)
@@ -44,7 +48,23 @@ class ChannelDialogFragment : DialogFragment(), View.OnClickListener {
     }
 
     private fun onSubmitClicked(view: View) {
-        // TODO Implemen later
+        val channel = Channel(
+            null,
+            channelName.text.toString(),
+            channelDescription.text.toString()
+        )
+
+        channelName.text.clear()
+        channelDescription.text.clear()
+        channelListener?.onChannel(channel)
+        dismiss()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if(context is ChannelListener) {
+            channelListener = context
+        }
     }
 
     companion object {

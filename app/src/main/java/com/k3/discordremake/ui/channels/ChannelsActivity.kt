@@ -2,11 +2,13 @@ package com.k3.discordremake.ui.channels
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,7 +22,7 @@ import com.k3.discordremake.ui.login.LoginActivity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.design.longSnackbar
 
-class ChannelsActivity : AppCompatActivity(), AnkoLogger, ChannelAdapter.OnChannelSelectedListener {
+class ChannelsActivity : AppCompatActivity(), AnkoLogger, ChannelAdapter.OnChannelSelectedListener, ChannelDialogFragment.ChannelListener {
 
     private lateinit var binding: ActivityChannelsBinding
     private lateinit var channelDialogFragment: ChannelDialogFragment
@@ -37,6 +39,13 @@ class ChannelsActivity : AppCompatActivity(), AnkoLogger, ChannelAdapter.OnChann
         auth = FirebaseAuth.getInstance()
         initFireStore()
         initRecyclerView()
+    }
+
+    private fun addChannel(channel: Channel): Task<Void> {
+        return firestore.runTransaction {
+            it[channelReference] = channel
+            null
+        }
     }
 
     fun showChannelDialog(view: View) {
@@ -108,5 +117,20 @@ class ChannelsActivity : AppCompatActivity(), AnkoLogger, ChannelAdapter.OnChann
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onChannel(channel: Channel) {
+        Log.d("AAA", "adding new channel")
+        if(!channel.name.isNullOrEmpty() && !channel.description.isNullOrEmpty()) {
+            addChannel(channel)
+                .addOnSuccessListener {
+                    longToast("Channel Created")
+                }
+                .addOnFailureListener {
+                    binding.channelsLayout.longSnackbar(getString(R.string.network_error))
+                }
+        } else{
+            binding.channelsLayout.longSnackbar(getString(R.string.name_or_description_empty))
+        }
     }
 }

@@ -103,7 +103,7 @@ class ChatActivity : AppCompatActivity(), AnkoLogger {
         }
     }
 
-    fun sendClicked() {
+    private fun sendClicked() {
         addMessage(binding.messageTextField.text.toString())
             .addOnSuccessListener(this) {
                 // reset
