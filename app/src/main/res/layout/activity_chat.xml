@@ -42,6 +42,7 @@
                 android:layout_height="match_parent">
 
                 <EditText
+                    android:id="@+id/messageTextField"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/sendButton"
                     app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +59,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
-                    android:onClick="sendClicked"
                     android:tint="@color/colorPrimaryDark"
                     android:src="@android:drawable/ic_menu_send"
                     app:layout_constraintBottom_toBottomOf="parent"
